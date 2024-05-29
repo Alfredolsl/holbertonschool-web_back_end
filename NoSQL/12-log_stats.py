@@ -8,7 +8,7 @@ if __name__ == "__main__":
     Collection: Nginx
     """
     client = MongoClient("mongodb://127.0.0.1:27017")
-    nginx_collection = clients.logs.nginx
+    nginx_collection = client.logs.nginx
 
     n_logs = nginx_collection.count_documents({})
     print(f"{n_logs} logs")
