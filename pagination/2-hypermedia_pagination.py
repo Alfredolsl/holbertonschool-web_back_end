@@ -61,7 +61,7 @@ class Server:
         total_pages: the total number of pages in the dataset as an integer
         """
         page_data = self.get_page(page, page_size)
-        total_data = len(self.__dataset())
+        total_data = len(self.dataset())
         total_pages = ceil(total_data / page_size)
 
         return {
