@@ -5,6 +5,7 @@ class Pricing {
     this.amount = amount;
     this.currency = currency;
   }
+
   get amount() {
     return this._amount;
   }
@@ -13,7 +14,7 @@ class Pricing {
     if (typeof amount === 'number') {
       this._amount = amount;
     } else {
-      throw new TypeError("Amount must be a number");
+      throw new TypeError('Amount must be a number');
     }
   }
 
@@ -25,7 +26,7 @@ class Pricing {
     if (currency instanceof Currency) {
       this._currency = currency;
     } else {
-      throw new TypeError("Currency must be Currency type object")
+      throw new TypeError('Currency must be Currency type object');
     }
   }
 
@@ -38,3 +39,4 @@ class Pricing {
   }
 }
 
+export default Pricing;
