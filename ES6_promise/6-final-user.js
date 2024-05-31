@@ -18,7 +18,6 @@ async function handleProfileSignup(firstName, lastName, fileName) {
     promise1.value = err.toString();
   }
 
-
   try {
     const upload = await uploadPhoto(fileName);
     promise2.status = 'fulfilled';
