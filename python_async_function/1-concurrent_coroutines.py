@@ -11,10 +11,11 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """returns the list of all the delays (float values)."""
     spawn_list = []
     delayed_list = []
+
     for task in range(n):
         delayed_task = asyncio.create_task(wait_random(max_delay))
         delayed_task.add_done_callback(lambda x:
-                                       delayed_list.append(x.result()))
+                                       delayed_list.append(x.result())) # this line triggers the anonymous function when delayed_task is done.
         spawn_list.append(delayed_task)
 
     for spawn in spawn_list:
