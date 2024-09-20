@@ -16,7 +16,7 @@ class StudentsController {
           }
         }
 
-        res.status(200).send(`${students.join('\n')}\n`);
+        res.status(200).send(`${students.join('\n')}`);
       });
   }
 
@@ -29,7 +29,7 @@ class StudentsController {
         .then((fields) => {
           const students = fields[major];
 
-          res.status(200).send(`List: ${students.join(', ')}\n`);
+          res.status(200).send(`List: ${students.join(', ')}`);
         })
         .catch(() => res.status(500).send('Cannot load the database'));
     }
