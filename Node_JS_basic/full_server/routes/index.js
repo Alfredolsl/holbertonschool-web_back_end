@@ -1,6 +1,7 @@
-const express = require('express');
 import AppController from '../controllers/AppController';
 import StudentsController from '../controllers/StudentsController';
+
+const express = require('express');
 
 function controllerRouting(app) {
   const router = express.Router();
@@ -15,7 +16,7 @@ function controllerRouting(app) {
   });
 
   router.get('/students/:major', (req, res) => {
-    StudentsController.getAllStudentsByMajor(req, res, process.argv[2])
+    StudentsController.getAllStudentsByMajor(req, res, process.argv[2]);
   });
 }
 

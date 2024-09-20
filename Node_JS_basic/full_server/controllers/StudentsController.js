@@ -8,15 +8,15 @@ class StudentsController {
         students.push('This is the list of our students');
 
         let msg;
-	
+
         for (const key in fields) {
           if (Object.hasOwn(fields, key)) {
             msg = `Number of students in ${key}: ${fields[key].length}. List: ${fields[key].join(', ')}`;
             students.push(msg);
-	  }
-	}
+          }
+        }
 
-	res.status(200).send(`${students.join('\n')}\n`);
+        res.status(200).send(`${students.join('\n')}\n`);
       });
   }
 
@@ -29,9 +29,9 @@ class StudentsController {
         .then((fields) => {
           const students = fields[major];
 
-          res.status(200).send(`List: ${students.join(', ')}`);
+          res.status(200).send(`List: ${students.join(', ')}\n`);
         })
-      .catch(() => res.status(500).send('Cannot load the database'));
+        .catch(() => res.status(500).send('Cannot load the database'));
     }
   }
 }
