@@ -16,7 +16,7 @@ class StudentsController {
 	  }
 	}
 
-	res.status(200).send(`${students.join('\n')}`);
+	res.status(200).send(`${students.join('\n')}\n`);
       });
   }
 
