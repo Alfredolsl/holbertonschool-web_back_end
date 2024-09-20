@@ -15,9 +15,9 @@ app.get('/students', async (req, res) => {
   try {
     const students = await countStudents(database);
     res.write('This is the list of our students\n');
-    res.end(`${students.join('\n')}`);
+    res.send(`${students.join('\n')}`);
   } catch (error) {
-    res.end(error.message);
+    res.send(error.message);
   }
 });
 
